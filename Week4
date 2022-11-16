@@ -1,0 +1,21 @@
+# Finding the best hospital in a state
+best <- function(state , outcome){
+  ## Read outcome data
+  dat <- read.csv("~/Downloads/w4/outcome-of-care-measures.csv", header = TRUE)
+  df <- subset(dat, dat$State == state)
+  if (outcome == "pneumonia"){
+    ind <- which.min(df[,23])
+    mins <- df[ind,2]
+  }
+  if (outcome == 'heart attck'){
+    ind <- which.min(df[,11])
+    mins <- df[ind,2]
+  }
+  if (outcome == 'heart failure'){
+    ind <- which.min(df[,17])
+    mins <- df[ind,2]
+  } 
+  ## Return hospital name in that state with lowest 30-day death ## rate
+  #}
+  mins
+}
