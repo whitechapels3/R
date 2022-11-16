@@ -7,7 +7,7 @@ best <- function(state , outcome){
     ind <- which.min(df[,23])
     mins <- df[ind,2]
   }
-  if (outcome == 'heart attck'){
+  if (outcome == 'heart attack'){
     ind <- which.min(df[,11])
     mins <- df[ind,2]
   }
